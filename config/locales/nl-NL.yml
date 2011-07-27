@@ -1,75 +1,75 @@
 nl-NL:
 
-  successfully_created: %{resource} was successfully created.
-  successfully_updated: %{resource} was successfully updated.
-  successfully_removed: %{resource} was successfully removed.
+  successfully_created: %{resource} is succesvol aangemaakt.
+  successfully_updated: %{resource} is succesvol geüpdate.
+  successfully_removed: %{resource} is succesvol verwijderd.
 
 
-  billing_firstname: "Billing First Name"
-  billing_lastname: "Billing Last Name"
-  shipping_firstname: "Shipping First Name"
-  shipping_lastname: "Shipping Last Name"
+  billing_firstname: "Facturering voornaam"
+  billing_lastname: " Facturering achternaam"
+  shipping_firstname: "Verzending voornaam "
+  shipping_lastname: "Verzending achternaam "
   
-  buyer_contact: "Buyer Contact"
+  buyer_contact: "Inkoper"
 
-  wholesale: "Wholesale"
-  wholesaler: "Wholesaler"
-  wholesalers: "Wholesalers"
-  new_wholesaler: "New Wholesaler"
-  editing_wholesaler: "Edit Wholesaler"
-  wholesaler_account: "Wholesaler Account"
-  listing_wholesalers: "Listing Wholesaler"
-  wholesale_login: "Wholesale Login"
-  wholesale_apply: "Apply for a wholesale account"
-  wholesale_signup: Wholesale Signup
+  wholesale: "Zakelijk"
+  wholesaler: "Zakelijke gebruiker"
+  wholesalers: "Zakelijke gebruikers"
+  new_wholesaler: "Nieuwe Zakelijke Account"
+  editing_wholesaler: "Bewerk Zakelijke Account"
+  wholesaler_account: "Zakelijke Account"
+  listing_wholesalers: "Lijst Zakelijke Accounts "
+  wholesale_login: "Zakelijke Login"
+  wholesale_apply: "Vraag een zakelijke account aan "
+  wholesale_signup: Aanvragen
   
   
   
   
   shared:
     address_form:
-      use_for_shipping: "Use billing address for shipping"
+      use_for_shipping: "Gebruik factureringsadres als ontvangstadres "
 
-  wholesale_customer: "Wholesale Customer ID: #%{id}"
+  wholesale_customer: "Zakelijk ID: #%{id}"
 
   
   wholesaler:
-    signup_success: Thank you for your interest in becoming a wholesaler! We'll be in touch shortly.
-    signup_failed: Wholesale account could not be created!
-    parts_error_message: There are errors with the user or addresses
+    signup_success: Bedankt voor uw interesse! We nemen binnen 5 werkdagen contact met u op.
+    signup_failed: Helaas, uw account kan niet aangemaakt worden!
+    parts_error_message: Er zijn fouten gevonden in uw gebruiker- of adresgegevens
   
   
   admin:
     
     hooks:
       product_form_right:
-        master_wholesale_price: "Master Wholesale Price"
+        master_wholesale_price: "Master Groothandelprijs"
       admin_orders_index_search:
-        show_wholesale_orders: "Show only wholesale orders"
+        show_wholesale_orders: "Alleen bestellingen groothandel"
         
     variants:
       form:
-        wholesale_price: "Wholesale Price"
+        wholesale_price: "Groothandelsprijs"
     
     
     wholesalers:
       
-      success: Wholesale account was successfully created
-      failed: Wholesale account could not be created
+      success: Uw account is succesvol aangemaakt.
+      failed: Helaas, uw account is niet aangemaakt.
     
       index:
-        company: "Company"
-        buyer_contact: "Buyer contact"
-        manager_contact: "Manager contact"
-        notes: "Notes"
+        company: "Firma"
+        buyer_contact: "Inkoper"
+        manager_contact: "Manager "
+        notes: "Notities"
       form:
-        company: "Company"
-        buyer_contact: "Buyer contact"
-        manager_contact: "Manager contact"
-        phone: "Phone"
+        company: "Firma"
+        buyer_contact: "Inkoper"
+        manager_contact: "Manager "
+        phone: "Telefoon"
         fax: "Fax"
-        resale_number: "Resale number"
-        taxid: "Taxid"
-        web_address: "Web address"
-        terms: "Terms"
-        notes: "Notes"
+        resale_number: "Doorverkoop nr."
+        taxid: "BTW nr."
+        web_address: "Website"
+        terms: "Voorwaarde"
+        notes: "Notities"

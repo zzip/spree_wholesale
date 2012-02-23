@@ -1,24 +1,24 @@
-class WholesalersController < Spree::BaseController
+class Spree::WholesalersController < Spree::BaseController
   respond_to :html, :xml
   
   def index
   end
   
   def show
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     respond_with(@wholesaler)
   end
   
   def new
-    @wholesaler = Wholesaler.new
+    @wholesaler = Spree::Wholesaler.new
     @wholesaler.build_user
-    @wholesaler.bill_address = Address.default
-    @wholesaler.ship_address = Address.default
+    @wholesaler.bill_address = Spree::Address.default
+    @wholesaler.ship_address = Spree::Address.default
     respond_with(@wholesaler)
   end
                 
   def create
-    @wholesaler = Wholesaler.new(params[:wholesaler])
+    @wholesaler = Spree::Wholesaler.new(params[:wholesaler])
     if @wholesaler.save
       flash[:notice] = I18n.t('wholesaler.signup_success')
       redirect_to wholesalers_path
@@ -29,12 +29,12 @@ class WholesalersController < Spree::BaseController
   end
   
   def edit
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     respond_with(@wholesaler)
   end
   
   def update
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
 
     if @wholesaler.update_attributes(params[:wholesaler])
       flash[:notice] = I18n.t('wholesaler.update_success')
@@ -45,7 +45,7 @@ class WholesalersController < Spree::BaseController
   end
   
   def destroy
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     @wholesaler.destroy
     flash[:notice] = I18n.t('wholesaler.destroy_success')
     respond_with(@wholesaler)

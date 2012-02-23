@@ -1,7 +1,7 @@
 <h1><%= t('wholesale_update') %></h1>
 
 <%= form_for @wholesaler do |form| %>
-  <%= render "shared/error_messages", :target => @wholesaler %>
+  <%= render "spree/shared/error_messages", :target => @wholesaler %>
   <%= render 'fields', :form => form %>
   
   <p class="action">

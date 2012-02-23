@@ -1,4 +1,4 @@
-class Admin::WholesalersController < Admin::ResourceController
+class Spree::Admin::WholesalersController < Spree::Admin::ResourceController
   respond_to :html, :xml  
   before_filter :approval_setup, :only => [ :approve, :reject ]
   
@@ -6,20 +6,20 @@ class Admin::WholesalersController < Admin::ResourceController
   end
   
   def show
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     respond_with(@wholesaler)
   end
   
   def new
-    @wholesaler = Wholesaler.new
+    @wholesaler = Spree::Wholesaler.new
     @wholesaler.build_user
-    @wholesaler.bill_address = Address.default
-    @wholesaler.ship_address = Address.default
+    @wholesaler.bill_address = Spree::Address.default
+    @wholesaler.ship_address = Spree::Address.default
     respond_with(@wholesaler)
   end
                 
   def create
-    @wholesaler = Wholesaler.new(params[:wholesaler])
+    @wholesaler = Spree::Wholesaler.new(params[:wholesaler])
     if @wholesaler.save
       flash[:notice] = I18n.t('admin.wholesaler.success')
       redirect_to admin_wholesalers_path
@@ -30,12 +30,12 @@ class Admin::WholesalersController < Admin::ResourceController
   end
   
   def edit
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     respond_with(@wholesaler)
   end
   
   def update
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
 
     if @wholesaler.update_attributes(params[:wholesaler])
       flash[:notice] = I18n.t('admin.wholesaler.update_success')
@@ -46,7 +46,7 @@ class Admin::WholesalersController < Admin::ResourceController
   end
   
   def destroy
-    @wholesaler = Wholesaler.find(params[:id])
+    @wholesaler = Spree::Wholesaler.find(params[:id])
     @wholesaler.destroy
     flash[:notice] = I18n.t('admin.wholesaler.destroy_success')
     respond_with(@wholesaler)
@@ -67,8 +67,8 @@ class Admin::WholesalersController < Admin::ResourceController
   private
   
   def approval_setup
-    @wholesaler = Wholesaler.find(params[:id])
-    @role = Role.find_or_create_by_name("wholesaler")
+    @wholesaler = Spree::Wholesaler.find(params[:id])
+    @role = Spree::Role.find_or_create_by_name("wholesaler")
   end
   
   def collection
@@ -76,7 +76,7 @@ class Admin::WholesalersController < Admin::ResourceController
     
     params[:search] ||= {}
     params[:search][:meta_sort] ||= "company.asc"
-    @search = Wholesaler.metasearch(params[:search])
+    @search = Spree::Wholesaler.metasearch(params[:search])
     @collection = @search.page(params[:page]).per(Spree::Config[:admin_products_per_page])
   end 
 end

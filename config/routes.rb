@@ -1,18 +1,16 @@
-Rails.application.routes.draw do
+Spree::Core::Engine.routes.append do
 
   get '/wholesaler/states' => "wholesaler_states#index"
-    
+
   resources :wholesalers
   
-  namespace(:admin) do
-  
+  namespace :admin do
     resources :wholesalers do
       member do
         get :approve
         get :reject
       end
     end
-    
   end
 
 end

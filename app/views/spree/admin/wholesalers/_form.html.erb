@@ -43,7 +43,7 @@
     </p>
     <p>
       <%= form.label :terms %><br/>
-      <%= form.select :terms, Wholesaler.term_options, :class => 'required' %><span class="req">*</span>
+      <%= form.select :terms, Spree::Wholesaler.term_options, :class => 'required' %><span class="req">*</span>
     </p>
     <p>
       <%= form.label :notes %><br/>
@@ -55,7 +55,7 @@
     <legend>User Details:</legend>
     <% if @wholesaler.new_record? %>
       <%= form.fields_for :user do |uf| %>
-        <%= render 'shared/user_form', :f => uf %>
+        <%= render 'spree/shared/user_form', :f => uf %>
       <% end %>
     <% else %>
       <p>
@@ -71,5 +71,5 @@
 </div>
 
 <div class="rightie">
-  <%= render "shared/address_form", :form => form %>
+  <%= render "spree/shared/address_form", :form => form %>
 </div>

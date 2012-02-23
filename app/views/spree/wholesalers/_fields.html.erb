@@ -3,7 +3,7 @@
   <fieldset class="user-details">
     <legend>User</legend>
     <%= form.fields_for :user do |uf| %>
-      <%= render 'shared/user_form', :f => uf %>
+      <%= render 'spree/shared/user_form', :f => uf %>
     <% end %>
   </fieldset>
 
@@ -44,7 +44,7 @@
     </p>
     <p>
       <%= form.label :terms %><br/>
-      <%= form.select :terms, Wholesaler.term_options, :class => 'required' %><span class="req">*</span>
+      <%= form.select :terms, Spree::Wholesaler.term_options, :class => 'required' %><span class="req">*</span>
     </p>
     <p>
       <%= form.label :notes %><br/>
@@ -54,7 +54,7 @@
 </fieldset>
 
 <fieldset class="rightie">
-  <%= render "shared/address_form", :form => form %>  
+  <%= render "spree/shared/address_form", :form => form %>  
 </fieldset>
 
 <% content_for :head do %>

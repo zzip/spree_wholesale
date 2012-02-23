@@ -1,4 +1,4 @@
-class Wholesaler < ActiveRecord::Base  
+class Spree::Wholesaler < ActiveRecord::Base
   partial_updates = false
   
   attr_accessible :bill_address_attributes, :ship_address_attributes, :user_attributes,
@@ -46,7 +46,7 @@ class Wholesaler < ActiveRecord::Base
   private
   
   def get_wholesale_role
-    @role = Role.find_or_create_by_name("wholesaler")
+    @role = Spree::Role.find_or_create_by_name("wholesaler")
   end  
   
   def clone_billing_address

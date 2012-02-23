@@ -1,4 +1,4 @@
-#insert_before :checkout_payment_step,     'hooks/wholesale_payment_options'
+  #insert_before :checkout_payment_step,     'hooks/wholesale_payment_options'
 Deface::Override.new(
   :virtual_path => 'checkout/_payment',
   :name => 'checkout_payment_step',
